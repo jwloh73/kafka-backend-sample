@@ -40,6 +40,7 @@ builder.Services.AddSwaggerGen();
 
 var app = builder.Build();
 
+//Comment this if don't want to listen
 var consumerThread = new Thread(() => KafkaConsumerService.StartConsuming(consumer, app, cancellationToken));
 consumerThread.Start();
 
